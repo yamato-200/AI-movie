@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マイホームページ</title>
+    <style>
+        body {
+            font-family: 'Helvetica', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 2em;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 1em;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1em;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2em;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ようこそ</h1>
+        <p>私のホームページへ</p>
+    </header>
+
+    <nav>
+        <a href="#home">ホーム</a>
+        <a href="#about">概要</a>
+        <a href="#contact">お問い合わせ</a>
+    </nav>
+
+    <div class="container">
+        <h2>こんにちは！</h2>
+        <p>これは私のホームページです。</p>
+        
+        <h2>最新情報</h2>
+        <ul>
+            <li>新しい記事を追加しました</li>
+            <li>デザインを更新しました</li>
+            <li>お問い合わせフォームを追加しました</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 マイホームページ</p>
+    </footer>
+</body>
+</html>
