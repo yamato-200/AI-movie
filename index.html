@@ -3,82 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>俺のホームページ</title>
+    <title>インタラクティブホームページ</title>
     <style>
         body {
-            font-family: 'Helvetica', sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f0f0f0;
         }
-
-        header {
-            background-color: #4CAF50;
+        .header {
+            background-color: #2196F3;
             color: white;
             text-align: center;
             padding: 2em;
+            transition: background-color 0.3s;
         }
-
-        nav {
+        .nav {
             background-color: #333;
             padding: 1em;
+            text-align: center;
         }
-
-        nav a {
+        .nav-link {
             color: white;
             text-decoration: none;
             padding: 1em;
+            margin: 0 10px;
         }
-
-        nav a:hover {
-            background-color: #555;
-        }
-
-        .container {
+        .content {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 20px auto;
             padding: 2em;
             background-color: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1em;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+        .theme-button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <header>
+    <div class="header" id="header">
         <h1>ようこそ</h1>
-        <p>私のホームページへ</p>
-    </header>
-
-    <nav>
-        <a href="#home">ホーム</a>
-        <a href="#about">概要</a>
-        <a href="#contact">お問い合わせ</a>
-    </nav>
-
-    <div class="container">
-        <h2>こんにちは！</h2>
-        <p>これは私のホームページです。</p>
-        
-        <h2>最新情報</h2>
-        <ul>
-            <li>新しい記事を追加しました</li>
-            <li>デザインを更新しました</li>
-            <li>お問い合わせフォームを追加しました</li>
-        </ul>
     </div>
 
-    <footer>
-        <p>&copy; 2025 マイホームページ</p>
-    </footer>
+    <div class="nav">
+        <a href="#" class="nav-link">ホーム</a>
+        <a href="#" class="nav-link">プロフィール</a>
+        <a href="#" class="nav-link">お問い合わせ</a>
+    </div>
+
+    <div class="content">
+        <h2>テーマを変更</h2>
+        <button class="theme-button" onclick="changeTheme('blue')">ブルー</button>
+        <button class="theme-button" onclick="changeTheme('green')">グリーン</button>
+        <button class="theme-button" onclick="changeTheme('purple')">パープル</button>
+
+        <h2>時計</h2>
+        <div id="clock"></div>
+
+        <h2>メッセージ</h2>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        // テーマ変更機能
+        function changeTheme(color) {
+            const colors = {
+                blue: '#2196F3',
+                green: '#4CAF50',
+                purple: '#9C27B0'
+            };
+            document.getElementById('header').style.backgroundColor = colors[color];
+        }
+
+        // デジタル時計
+        function updateClock() {
+            const now = new Date();
+            const time = now.toLocaleTimeString('ja-JP');
+            document.getElementById('clock').textContent = time;
+        }
+        setInterval(updateClock, 1000);
+
+        // ウェルカムメッセージ
+        const messages = ['こんにちは！', 'ようこそ!', '今日も良い一日を！'];
+        function changeMessage() {
+            const messageEl = document.getElementById('message');
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            messageEl.textContent = randomMessage;
+        }
+        setInterval(changeMessage, 3000);
+    </script>
 </body>
 </html>
